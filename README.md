@@ -16,7 +16,7 @@ should be the ability to switch the language of the interface
 
 should be support for input, output and storage of information (in the database), in different languages
 
-choose at least two languages ??as supported languages: one based on Cyrillic, another based on Latin
+choose at least two languages as supported languages: one based on Cyrillic, another based on Latin
 
 The application architecture must match the MVC pattern (MVC frameworks are not allowed).
 
