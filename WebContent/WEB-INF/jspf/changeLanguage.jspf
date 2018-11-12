@@ -1,0 +1,37 @@
+<%@ include file="/WEB-INF/jspf/taglib.jspf"%>
+<div class="dropdown">
+	<button class="btn btn-link dropdown-toggle text-white" type="button"
+		id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+		aria-expanded="false">
+		<fmt:message key="language" />
+	</button>
+	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		<form action="controller?command=changeLanguage" method="post">
+			<input type="hidden" name="lang" value="ru"> <input
+				type="hidden" name=url
+				value="${requestScope['javax.servlet.forward.query_string']}">
+			<button type="submit" class="btn btn-link">
+				<img src="res/images/ru.png" width="30" height="30"
+					class="d-inline-block align-top" alt="">
+			</button>
+			<fmt:message key="ru" />
+		</form>
+		<form action="controller?command=changeLanguage" method="post">
+			<input type="hidden" name="lang" value="en"> <input
+				type="hidden" name=url
+				value="${requestScope['javax.servlet.forward.query_string']}">
+			<button type="submit" class="btn btn-link">
+				<img src="res/images/en.png" width="30" height="30"
+					class="d-inline-block align-top" alt="">
+			</button>
+			<fmt:message key="en" />
+		</form>
+	</div>
+</div>
+
+
+
+
+
+
+

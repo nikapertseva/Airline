@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<Context>
+	<Resource name="jdbc/airline" auth="Container"
+		type="javax.sql.DataSource" maxActive="1000" maxIdle="300"
+		maxWait="10000" username="root" password="Ss80501528990sS"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/airline?useSSL=false&amp;serverTimezone=UTC&amp;characterEncoding=UTF-8" />
+
+</Context>

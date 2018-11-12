@@ -1,0 +1,9 @@
+<%@ include file="/WEB-INF/jspf/taglib.jspf"%>
+<th scope="col" class="align-middle text-left"><fmt:message key="name" /></th>
+<th scope="col" class="align-middle text-center"><fmt:message key="from.city" /></th>
+<th scope="col" class="align-middle text-center"><fmt:message key="to.city" /></th>
+<th scope="col" class="align-middle text-center"><fmt:message key="date.departure" /></th>
+<th scope="col" class="align-middle text-center"><fmt:message key="time.departure" /></th>
+<th scope="col" class="align-middle text-center"><fmt:message key="date.arrival" /></th>
+<th scope="col" class="align-middle text-center"><fmt:message key="time.arrival" /></th>
+<th scope="col" class="align-middle text-center"><fmt:message key="status" /></th>

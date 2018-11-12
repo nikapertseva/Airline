@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>Airline</display-name>
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>MainController</servlet-name>
+		<servlet-class>ua.nure.pertseva.airline.controller.MainControllerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MainController</servlet-name>
+		<url-pattern>/controller/*</url-pattern>
+	</servlet-mapping>
+
+	<listener>
+		<display-name>Listener</display-name>
+		<listener-class>ua.nure.pertseva.airline.listeners.ContextListener</listener-class>
+	</listener>
+	<resource-env-ref>
+		<resource-env-ref-name>jdbc/airline</resource-env-ref-name>
+		<resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>
+	</resource-env-ref>
+	<context-param>
+		<param-name>log4j-config-location</param-name>
+		<param-value>WEB-INF/log4j.properties</param-value>
+	</context-param>
+	<filter>
+		<filter-name>AccessFilter</filter-name>
+		<filter-class>ua.nure.pertseva.airline.filters.AccessFilter</filter-class>
+		<init-param>
+			<param-name>dispatcher</param-name>
+			<param-value>flights selection search logout flightInfo addCrew removeCrew addRequest editFlightsStatus</param-value>
+		</init-param>
+		<init-param>
+			<param-name>administrator</param-name>
+			<param-value>flightsAdmin addFlight editFlight pageEditFlight removeFlight employeesAdmin addEmployee pageEditEmployee editEmployee removeEmployee requestsAdmin editRequestsStatus usersAdmin addUser removeUser logout</param-value>
+		</init-param>
+		<init-param>
+			<param-name>freeZone</param-name>
+			<param-value>login changeLanguage</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>AccessFilter</filter-name>
+		<servlet-name>MainController</servlet-name>
+	</filter-mapping>
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>ua.nure.pertseva.airline.filters.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/jsp/errorPage.jsp</location>
+	</error-page>
+</web-app>
