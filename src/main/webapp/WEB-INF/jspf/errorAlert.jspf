@@ -1,0 +1,6 @@
+<%@ include file="/WEB-INF/jspf/taglib.jspf"%>
+<c:if test="${error}">
+	<div class="alert alert-danger" role="alert">
+		<fmt:message key="${errorMessage}" />
+	</div>
+</c:if>

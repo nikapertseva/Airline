@@ -1,0 +1,12 @@
+<%@ include file="/WEB-INF/jspf/taglib.jspf"%>
+<div class="btn-group-vertical  btn-group-lg col-lg-12" role="group"
+	aria-label="Vertical button group">
+	<a href="controller?command=flightsAdmin"
+		class="btn btn-outline-dark btn-block"><fmt:message key="flights" /></a>
+	<a href="controller?command=employeesAdmin"
+		class="btn btn-outline-dark btn-block"><fmt:message
+			key="employees" /></a> <a href="controller?command=requestsAdmin"
+		class="btn btn-outline-dark btn-block"><fmt:message key="requests" /></a>
+	<a href="controller?command=usersAdmin"
+		class="btn btn-outline-dark btn-block"><fmt:message key="users" /></a>
+</div>
